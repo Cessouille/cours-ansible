@@ -1,33 +1,60 @@
 # Challenge 2
 
-- Démarrez la VM ubuntu depuis le répertoire atelier-01.  
-`$ cd ~/formation-ansible/atelier-01`  
-`$ vagrant up ubuntu`
+- Démarrez la VM ubuntu depuis le répertoire atelier-01.
 
-- Connectez-vous à cette VM.  
-`$ vagrant ssh ubuntu`
+```
+$ cd ~/formation-ansible/atelier-01
+$ vagrant up ubuntu
+```
 
-- Configurez un dépôt PPA (Personal Package Archive) pour Ansible  
-`$ sudo apt-add-repository ppa:ansible/ansible`
+- Connectez-vous à cette VM.
 
-- Rafraîchissez les informations sur les paquets.  
-`$ sudo apt update`
+```
+$ vagrant ssh ubuntu
+```
 
-- Recherchez le paquet ansible avec les options qui vont bien.  
-`$ apt-cache search --names-only ansible`
+- Configurez un dépôt PPA (Personal Package Archive) pour Ansible
 
-- Installez le paquet officiel fourni par la distribution.  
-`$ sudo apt install -y ansible`
+```
+$ sudo apt-add-repository ppa:ansible/ansible
+```
 
-- Vérifiez si l'installation s'est bien déroulée.  
-`$ ansible --version`
+- Rafraîchissez les informations sur les paquets.
 
-- Notez la version d'Ansible.  
-`$ ansible --version`
+```
+$ sudo apt update
+```
 
-- Déconnectez-vous et supprimez la VM.  
-`$ exit`  
-`$ vagrant destroy -f ubuntu`
+- Recherchez le paquet ansible avec les options qui vont bien.
+
+```
+$ apt-cache search --names-only ansible
+```
+
+- Installez le paquet officiel fourni par la distribution.
+
+```
+$ sudo apt install -y ansible
+```
+
+- Vérifiez si l'installation s'est bien déroulée.
+
+```
+$ ansible --version
+```
+
+- Notez la version d'Ansible.
+
+```
+$ ansible --version
+```
+
+- Déconnectez-vous et supprimez la VM.
+
+```
+$ exit
+$ vagrant destroy -f ubuntu
+```
 
 ## Version
 > ansible [core 2.17.14]  

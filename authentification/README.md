@@ -1,9 +1,12 @@
-# Challenge
+# À vous de jouer !
 
-- Placez-vous dans le répertoire du troisième atelier pratique.  
-  `$ cd ~/formation-ansible/atelier-03`
+- Placez-vous dans le répertoire du troisième atelier pratique.
 
-- Voici les quatre machines virtuelles Ubuntu 22.04 de cet atelier.  
+```
+$ cd ~/formation-ansible/atelier-03
+```
+
+- Voici les quatre machines virtuelles Ubuntu 22.04 de cet atelier.
 
   | Machine virtuelle | Adresse IP     |
   | :---------------- | :------------- |
@@ -12,11 +15,20 @@
   | target02          | 192.168.56.30  |
   | target03          | 192.168.56.40  |
 
-- Démarrez les VM.  
-  `$ vagrant up`
+- Démarrez les VM.
 
-- Connectez-vous au *Control Host*.  
-  `$ vagrant ssh control`
+```
+$ vagrant up
+```
 
-- Ansible est déjà installé sur cette machine.  
-  `$ type ansible`
+- Connectez-vous au *Control Host*.
+
+```
+$ vagrant ssh control
+```
+
+- Ansible est déjà installé sur cette machine.
+
+```
+$ type ansible
+```
