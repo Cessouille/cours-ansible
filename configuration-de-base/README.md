@@ -6,13 +6,13 @@
 vagrant up
 ```
 
-- Connectez-vous au *Control Host*.
+- Connectez-vous au _Control Host_.
 
 ```sh
 vagrant ssh control
 ```
 
-- Éditez /etc/hosts de manière à ce que les Target Hosts soient joignables par leur nom d'hôte simple.
+- Éditez /etc/hosts de manière à ce que les _Target Hosts_ soient joignables par leur nom d'hôte simple.
 
 ```sh
 sudo nano /etc/hosts
@@ -25,7 +25,7 @@ sudo nano /etc/hosts
 192.168.56.40   target03.sandbox.lan    target03
 ```
 
-- Configurez l'authentification par clé SSH avec les trois Target Hosts.
+- Configurez l'authentification par clé SSH avec les trois _Target Hosts_.
 
 ```sh
 ssh-keyscan -t rsa target01 target02 target03 >> .ssh/known_hosts
@@ -51,13 +51,13 @@ ansible all -i target01,target02,target03 -m ping
 Les connexions réussissent.
 ![Capture d'écran des connexions réussissant](ping_success.png)
 
-- Créez un répertoire de projet ~/monprojet.
+- Créez un répertoire de projet `~/monprojet`.
 
 ```sh
 mkdir ~/monprojet
 ```
 
-- Créez un fichier vide ansible.cfg dans ce répertoire.
+- Créez un fichier vide `ansible.cfg` dans ce répertoire.
 
 ```sh
 cd monprojet
@@ -71,12 +71,13 @@ ansible --version | head -n 2
 ```
 
 Le fichier est bien pris en compte par Ansible.
+
 ```
 ansible 2.10.8
   config file = /home/vagrant/monprojet/ansible.cfg
 ```
 
-- Spécifiez un inventaire nommé hosts.
+- Spécifiez un inventaire nommé `hosts`.
 
 ```sh
 nano ansible.cfg
@@ -87,7 +88,7 @@ nano ansible.cfg
 inventory = ./hosts
 ```
 
-- Activez la journalisation dans ~/journal/ansible.log.
+- Activez la journalisation dans `~/journal/ansible.log`.
 
 ```sh
 mkdir -v ~/logs
@@ -108,7 +109,7 @@ cat ~/logs/ansible.log
 La journalisation fonctionne.
 ![Capture d'écran de la journalisation](log_success.png)
 
-- Créez un groupe [testlab] avec vos trois Target Hosts.
+- Créez un groupe [testlab] avec vos trois _Target Hosts_.
 
 ```sh
 nano hosts
@@ -141,7 +142,7 @@ ansible all -m ping
 Les pings réussissent.
 ![Capture d'écran des pings réussissant](ping_all_success.png)
 
-- Définissez l'élévation des droits pour l'utilisateur vagrant sur les Target Hosts.
+- Définissez l'élévation des droits pour l'utilisateur vagrant sur les _Target Hosts_.
 
 ```sh
 nano hosts
@@ -151,7 +152,7 @@ nano hosts
 ansible_become=yes
 ```
 
-- Affichez la première ligne du fichier /etc/shadow sur tous les Target Hosts.
+- Affichez la première ligne du fichier `/etc/shadow` sur tous les _Target Hosts_.
 
 ```sh
 ansible all -a "head -n 1 /etc/shadow"
@@ -159,7 +160,7 @@ ansible all -a "head -n 1 /etc/shadow"
 
 ![Capture d'écran de la première ligne du fichier /etc/shadow](etc_shadow_success.png)
 
-- Quittez le Control Host et supprimez toutes les VM de l'atelier.
+- Quittez le _Control Host_ et supprimez toutes les VM de l'atelier.
 
 ```sh
 exit

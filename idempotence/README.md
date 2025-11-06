@@ -1148,7 +1148,7 @@ ansible all -m command -a "df -h /"
 
 ![Capture d'écran de l'espace utilisé par la partition principale](taille_disque.png)
 
-- Quittez le Control Host et supprimez toutes les VM de l'atelier.
+- Quittez le _Control Host_ et supprimez toutes les VM de l'atelier.
 
 ```sh
 exit
