@@ -12,7 +12,7 @@ vagrant up
 vagrant ssh control
 ```
 
-- Éditez /etc/hosts de manière à ce que les _Target Hosts_ soient joignables par leur nom d'hôte simple.
+- Éditez `/etc/hosts` de manière à ce que les _Target Hosts_ soient joignables par leur nom d'hôte simple.
 
 ```sh
 sudo nano /etc/hosts
@@ -42,7 +42,7 @@ sudo apt update
 sudo apt install -y ansible
 ```
 
-- Envoyez un premier ping Ansible sans configuration.
+- Envoyez un premier `ping` Ansible sans configuration.
 
 ```sh
 ansible all -i target01,target02,target03 -m ping
@@ -109,7 +109,7 @@ cat ~/logs/ansible.log
 La journalisation fonctionne.
 ![Capture d'écran de la journalisation](log_success.png)
 
-- Créez un groupe [testlab] avec vos trois _Target Hosts_.
+- Créez un groupe `[testlab]` avec vos trois _Target Hosts_.
 
 ```sh
 nano hosts
@@ -122,7 +122,7 @@ target02
 target03
 ```
 
-- Définissez explicitement l'utilisateur vagrant pour la connexion à vos cibles.
+- Définissez explicitement l'utilisateur `vagrant` pour la connexion à vos cibles.
 
 ```sh
 nano hosts
@@ -133,7 +133,7 @@ nano hosts
 ansible_user=vagrant
 ```
 
-- Envoyez un ping Ansible vers le groupe de machines [all].
+- Envoyez un ping Ansible vers le groupe de machines `[all]`.
 
 ```sh
 ansible all -m ping

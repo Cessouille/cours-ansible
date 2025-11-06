@@ -1,6 +1,6 @@
 # Challenge 2
 
-- Démarrez la VM ubuntu depuis le répertoire atelier-01.
+- Démarrez la VM `ubuntu` depuis le répertoire `atelier-01`.
 
 ```sh
 cd ~/formation-ansible/atelier-01
@@ -25,7 +25,7 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 ```
 
-- Recherchez le paquet ansible avec les options qui vont bien.
+- Recherchez le paquet `ansible` avec les options qui vont bien.
 
 ```sh
 apt-cache search --names-only ansible
