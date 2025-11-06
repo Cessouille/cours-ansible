@@ -3,6 +3,7 @@
 - Installez successivement les paquets `tree`, `git` et `nmap` sur toutes les cibles.
 
 tree
+
 ```sh
 ansible all -m package -a "name=tree state=present"
 ```
@@ -145,6 +146,7 @@ suse | SUCCESS => {
 ```
 
 git
+
 ```sh
 ansible all -m package -a "name=git state=present"
 ```
@@ -366,6 +368,7 @@ rocky | SUCCESS => {
 ```
 
 nmap
+
 ```sh
 ansible all -m package -a "name=nmap state=present"
 ```
@@ -590,6 +593,7 @@ suse | SUCCESS => {
 - Désinstallez successivement ces trois paquets en utilisant le paramètre supplémentaire `state=absent`.
 
 tree
+
 ```sh
 ansible all -m package -a "name=tree state=absent"
 ```
@@ -717,6 +721,7 @@ suse | SUCCESS => {
 ```
 
 git
+
 ```sh
 ansible all -m package -a "name=git state=absent"
 ```
@@ -853,6 +858,7 @@ debian | SUCCESS => {
 ```
 
 nmap
+
 ```sh
 ansible all -m package -a "name=nmap state=absent"
 ```
@@ -989,7 +995,7 @@ suse | SUCCESS => {
 }
 ```
 
-- Copiez le fichier `/etc/fstab` du *Control Host* vers tous les *Target Hosts* sous forme d'un fichier `/tmp/test3.txt`.
+- Copiez le fichier `/etc/fstab` du _Control Host_ vers tous les _Target Hosts_ sous forme d'un fichier `/tmp/test3.txt`.
 
 ```sh
 ansible all -m copy -a "src=/etc/fstab dest=/tmp/test3.txt"
@@ -1088,7 +1094,7 @@ suse | SUCCESS => {
 }
 ```
 
-- Supprimez le fichier `/tmp/test3.txt` sur les *Target Hosts* en utilisant le module `file` avec le paramètre `state=absent`.
+- Supprimez le fichier `/tmp/test3.txt` sur les _Target Hosts_ en utilisant le module `file` avec le paramètre `state=absent`.
 
 ```sh
 ansible all -m file -a "path=/tmp/test3.txt state=absent"
@@ -1134,10 +1140,17 @@ suse | SUCCESS => {
 }
 ```
 
-- Enfin, affichez l'espace utilisé par la partition principale sur tous les *Target Hosts*. Que remarquez-vous ?
+- Enfin, affichez l'espace utilisé par la partition principale sur tous les _Target Hosts_. Que remarquez-vous ?
 
 ```sh
 ansible all -m command -a "df -h /"
 ```
 
 ![Capture d'écran de l'espace utilisé par la partition principale](taille_disque.png)
+
+- Quittez le Control Host et supprimez toutes les VM de l'atelier.
+
+```sh
+exit
+vagrant destroy -f
+```
